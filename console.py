@@ -33,19 +33,19 @@ class HBNBCommand(cmd.Cmd):
     prompt = '(hbnb) '
 
     def do_EOF(self, line):
-        """end of File command: exit the program"""
+        """End of File command: exit the program"""
         return True
 
     def emptyline(self):
-        """ overwriting the emptyline method """
+        """ Overwriting the emptyline method """
         return False
 
     def do_quit(self, line):
-        """quit command exit the program"""
+        """Quit command exit the program"""
         return True
 
     def do_create(self, line):
-        """creates a new BaseModel instance,
+        """Creates a new BaseModel instance,
         saves it to the JSON file and prints the id"""
         if len(line) == 0:
             print("** class name missing **")
@@ -60,14 +60,14 @@ class HBNBCommand(cmd.Cmd):
 
     def help_quit(self):
         ''' help_quit '''
-        print("quit command to exit the program\n")
+        print("Quit command to exit the program\n")
 
     def help_EOF(self):
         """help_EOF"""
-        print("end of File command: exit the program\n")
+        print("End of File command: exit the program\n")
 
     def do_show(self, line):
-        """prints an instance as a string based on the class and id"""
+        """Prints an instance as a string based on the class and id"""
         className_line = line.split()
         if len(className_line) == 0:
             print("** class name missing **")
@@ -84,7 +84,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_destroy(self, line):
-        """deletes an instance based on the class and id"""
+        """Deletes an instance based on the class and id"""
         className_line = line.split()
         if len(className_line) == 0:
             print("** class name missing **")
@@ -102,7 +102,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** no instance found **")
 
     def do_all(self, arg):
-        """prints string representations of instances"""
+        """Prints string representations of instances"""
         className_line = shlex.split(arg)
         obj_list = []
         if len(className_line) == 0:
@@ -122,7 +122,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
 
     def do_update(self, line):
-        """update an instance based on the class name, id, attribute & value"""
+        """Update an instance based on the class name, id, attribute & value"""
         className_line = line.split()
         staticArray = ["id", "created_at", "updated_at"]
         objects = models.storage.all()
